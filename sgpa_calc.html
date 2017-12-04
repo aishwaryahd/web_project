@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+
+<head>
+    <title>
+        Gradepoint Calculator
+    </title>
+    <!-- <link rel="stylesheet" type="text/css" href="sgpa1.css"> -->
+    <link rel="stylesheet" type="text/css" href="dist.css">
+    <link rel="stylesheet" href="https://www.injntu.com/css/bs.min.css" media="all" onload="if(media!='all')media='all'">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" media="all" onload="if(media!='all')media='all'">
+    <link rel="stylesheet" href="https://www.injntu.com/css/ie/ie.css" media="all" onload="if(media!='all')media='all'">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+    var isBlocked = true;
+    </script>
+</head>
+
+<body>
+    <header>
+        <nav class="flex items-center justify-between flex-wrap bg-red p-6">
+            <div class="flex items-center flex-no-shrink text-white mr-6">
+            </div>
+            <div class="block lg:hidden">
+                <button class="flex items-center px-3 py-2 border rounded text-teal-lighter border-red-light hover:text-white hover:border-white">
+                    <svg class="h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Menu</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+    <div class="entry-content" itemprop="articleBody">
+        <script>
+        var ct = 1;
+
+        function new_link() {
+            ct++;
+            var div1 = document.createElement('div');
+            div1.id = ct;
+            // link to delete extended form elements
+            var delLink = '<a class="btn btn-danger" style="width:100%" href="javascript:delIt(' + ct + ')">Delete</a>';
+            //var qq='</div>';
+            div1.innerHTML = document.getElementById('newlinktpl').innerHTML;
+            document.getElementById('newlink').appendChild(div1);
+            $('#' + ct + ' #del').append(delLink);
+
+        }
+        // function to delete the newly added set of elements
+        function delIt(eleId) {
+            d = document;
+            var ele = d.getElementById(eleId);
+            var parentEle = d.getElementById('newlink');
+            parentEle.removeChild(ele);
+        }
+        </script>
+        <script>
+        function findTotal() {
+            var arr = document.getElementsByName('cre[]');
+            var arr1 = document.getElementsByName('gp[]');
+            var tot = 0;
+            var numerator = 0;
+            var temp1;
+            var temp2;
+            for (var i = 0; i < arr.length; i++) {
+                if (parseInt(arr[i].value)) {
+                    tot += parseInt(arr[i].value);
+                    numerator += parseInt(arr[i].value) * parseInt(arr1[i].value);
+                }
+            }
+            var k = document.getElementById('total').value = (numerator / tot).toFixed(2);
+            if (isNaN(k)) k = 0;
+            document.getElementById("sgpa").innerHTML = "Your SGPA is <h3>" + k + "/10</h3>";
+        }
+        </script>
+        <center>
+            <h4>SGPA Calculator ( Semester Grade Point Average )</h4>
+        </center>
+        <center>
+            <div id="sgpa">Your SGPA is
+                <h3>0/10</h3></div>
+        </center>
+        <br>
+        <div id="newlink">
+            <div class="row">
+                <div class="col-xs-6">
+                    <p id="addnew">
+                        <a class="btn btn-success" style="width:100%" href="javascript:new_link()">Add New Subject</a>
+                    </p>
+                </div>
+                <div class="col-xs-6">
+                    <a class="btn btn-info" style="width:100%" onclick="findTotal()">Calculate SGPA</a>
+                </div>
+            </div>
+            <br>
+        </div>
+        <div id="newlinktpl" style="display:none">
+            <div class="row">
+                <div class="col-xs-3 ">
+                    <div class="form-group">
+                        <input class="form-control" type="text" placeholder="Subject">
+                    </div>
+                </div>
+                <div class="col-xs-3 ">
+                    <div class="form-group">
+                        <select name="gp[]" class="form-control">
+                            <option value="-">Grade</option>
+                            <option value="10">100-90</option>
+                            <option value="9">90-80</option>
+                            <option value="8">80-70</option>
+                            <option value="7">70-60</option>
+                            <option value="6">60-50</option>
+                            <option value="5">50-40</option>
+                            <option value="0">below 40</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-xs-3">
+                    <div class="form-group">
+                        <input class="form-control" type="text" autocomplete="off" placeholder="Credits" name="cre[]" value="" maxlength="9" size="9"> </div>
+                </div>
+                <div class="col-xs-3" id="del"></div>
+            </div>
+            <input type="hidden" name="total" id="total" value="NaN" readonly="">
+        </div>
+        <script>
+        findTotal();
+        </script>
+        <br>
+        <br>
+    </div>
+    <br>
+    <p align="center"> ALL THE BEST ! </p>
+    </center>
+</body>
+
+</html>

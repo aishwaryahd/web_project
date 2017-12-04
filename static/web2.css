@@ -1,0 +1,30 @@
+body
+{
+	background-image:url("cal.jpg");
+	background-size:cover;
+	background-repeat:no-repeat;
+	background-position:center center;
+}
+h3
+{
+	font-size: 60pt;
+	font-family:times new roman;
+	color:black;
+}
+ul
+{ 
+	text-align: center;
+	font-size: 40pt;
+	font-family:times new roman;
+	color:black;
+	font-style:normal;
+}
+a:hover
+{
+	font-color:white;
+	font-style:italic;
+}
+a{
+	font-size: 40pt;
+	font-color:white;
+}

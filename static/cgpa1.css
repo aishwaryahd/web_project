@@ -1,0 +1,26 @@
+body 
+{
+    background-image:    url("cal.jpg");
+    background-size:     cover;                      
+    background-repeat:   no-repeat;
+    background-position: center center;              
+}
+h1
+{
+	text-align: center;
+	font-size: 60pt;
+}
+table, th, td 
+{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td 
+{
+    padding: 15px;
+}
+p
+{
+	color:red;
+	font-style: italic;
+}

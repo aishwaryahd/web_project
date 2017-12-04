@@ -1,0 +1,29 @@
+h1.abc {
+	font-size: 80pt;
+	text-align:center;
+	font-family: times new roman;
+	color: black;
+	font-style: normal;
+	text-shadow: 2px 2px #FF0000;
+}
+/*body{
+	background-image:url("cal.jpg");
+	background-size:cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+}*/
+form
+{
+	font-size:20pt;
+	color:black;
+	text-align:center;
+}
+button
+{
+	background-color: white;
+	margin-left: auto;
+	margin-right: auto;
+	display:block;
+	margin-top: 30%
+	margin-bottom:50%;
+}

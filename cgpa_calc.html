@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Gradepoint Calculator
+    </title>
+    <link rel="stylesheet" type="text/css" href="dist.css">
+    <link rel="stylesheet" type="text/css" href="cgpa1.css">
+
+    
+</head>
+
+<body>
+    <header>
+        <nav class="flex items-center justify-between flex-wrap bg-red p-6">
+            <div class="flex items-center flex-no-shrink text-white mr-6">
+               
+            </div>
+            <div class="block lg:hidden">
+                <button class="flex items-center px-3 py-2 border rounded text-teal-lighter border-red-light hover:text-white hover:border-white">
+                    <svg class="h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <title>Menu</title>
+                        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+                    </svg>
+                </button>
+            </div>
+            <!-- <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+            <div class="text-sm lg:flex-grow">
+                <a href="{{ url_for('home')}}" class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4">-->
+            <!-- Home
+      </a>
+                <a href="{{ url_for('add')}}" class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white mr-4">
+        Add
+      </a>
+                <a href="{{ url_for('view')}}" class="block mt-4 lg:inline-block lg:mt-0 text-teal-lighter hover:text-white">-->
+            <!--View
+      </a>
+            </div>
+            <div>
+                <a href="https://github.com/arvind1705/Nineleaps-Coding-Challenge" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal hover:bg-white mt-4 lg:mt-0">Github</a>
+            </div>
+        </div>-->
+        </nav>
+    </header>
+    <br>
+    <center>
+            <h4>CGPA Calculator ( Cumulative Grade Point Average )</h4>
+        </center>
+    <!--<h1> CGPA Calculation </h1>-->
+    <br>
+    <center>
+        
+            <table border=5 bgcolor=white cellpadding="5" cellspacing="2">
+                <div>
+                <th>Semester</th>
+                <th>SGPA</th>
+                <!--<TH>Credits</TH>-->
+            </div>
+                <tr>
+                    <td>Semester 1</td>
+                    <td>
+                        <input type=text size=5 name="GR1" align=top maxlength=5>
+                    </td>
+                    <!--<TD><INPUT TYPE=TEXT SIZE=5 NAME="CR1" ALIGN=TOP 
+MAXLENGTH=5></TD>-->
+                </tr>
+                <tr>
+                    <td>Semester 2</td>
+                    <td>
+                        <input type=text size=5 name="GR2" align=top maxlength=5>
+                    </td>
+                    <!--<TD><INPUT TYPE=TEXT SIZE=5 NAME="CR2" ALIGN=TOP 
+MAXLENGTH=5></TD>-->
+                </tr>
+                <tr>
+                    <td>Semester 3</td>
+                    <td>
+                        <input type=text size=5 name="GR3" align=top maxlength=5>
+                    </td>
+                    <!--<TD><INPUT TYPE=TEXT SIZE=5 NAME="CR3" ALIGN=TOP 
+MAXLENGTH=5></TD>-->
+                </tr>
+                <tr>
+                    <td>Semester 4</td>
+                    <td>
+                        <input type=text size=5 name="GR4" align=top maxlength=5>
+                    </td>
+                    <!--<TD><INPUT TYPE=TEXT SIZE=5 NAME="CR4" ALIGN=TOP 
+MAXLENGTH=5></TD>-->
+                </tr>
+                <tr>
+                    <td>Semester 5</td>
+                    <td>
+                        <input type=text size=5 name="GR5" align=top maxlength=5>
+                    </td>
+                    <!--<TD><INPUT TYPE=TEXT SIZE=5 NAME="CR5" ALIGN=TOP 
+MAXLENGTH=5></TD>-->
+                </tr>
+                <tr>
+                    <td>Semester 6</td>
+                    <td>
+                        <input type=text size=5 name="GR6" align=top maxlength=5>
+                    </td>
+                    <!--<TD><INPUT TYPE=TEXT SIZE=5 NAME="CR6" ALIGN=TOP 
+MAXLENGTH=5></TD>-->
+                </tr>
+                <tr>
+                    <td>Semester 7</td>
+                    <td>
+                        <input type=text size=5 name="GR7" align=top maxlength=5>
+                    </td>
+                    <!--<TD><INPUT TYPE=TEXT SIZE=5 NAME="CR7" ALIGN=TOP 
+MAXLENGTH=5></TD>-->
+                </tr>
+                <tr>
+                    <td>Semester 8</td>
+                    <td>
+                        <input type=text size=5 name="GR8" align=top maxlength="5">
+                    </td>
+                    <!--<TD><INPUT TYPE=TEXT SIZE=5 NAME="CR8" ALIGN=TOP 
+MAXLENGTH=5></TD>-->
+                </tr>
+                <tr align=center>
+                    <td colspan=3>
+                        <!--<input type="button" value="Calculate" 
+name="CalcButton"-->
+                        
+                    </td>
+                </tr>
+            </table>
+            <button class="bg-red-dark hover:bg-red text-white font-bold py-2 px-4 rounded" onclick="javascript:calculate()"> Calculate >
+                        </button>
+        
+        <script type="text/javascript">
+    function calculate() {
+
+        
+        s1 = parseInt(document.getElementsByName("GR1")[0].value)
+        console.log(s1)
+        s2 = parseInt(document.getElementsByName("GR2")[0].value)
+        s3 = parseInt(document.getElementsByName("GR3")[0].value)
+        s4 = parseInt(document.getElementsByName("GR4")[0].value)
+        s5 = parseInt(document.getElementsByName("GR5")[0].value)
+        s6 = parseInt(document.getElementsByName("GR6")[0].value)
+        s7 = parseInt(document.getElementsByName("GR7")[0].value)
+        s8 = parseInt(document.getElementsByName("GR8")[0].value)
+        sgpa = (s1+s2+s3+s4+s5+s6+s7+s8)/8
+        console.log(sgpa)
+        alert("Your Current CGPA is : " + sgpa);
+    }
+    </script>
+        <br>
+        <p>
+        </p>
+    </center>
+    <br>
+    <p align="center"> ALL THE BEST ! </p>
+    
+</body>
+
+</html>
